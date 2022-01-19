@@ -20,7 +20,6 @@ setup(
     keywords='GHG4 adapter',
     install_requires=[
           'scikit-learn',
-          'pyspark',
           'pandas'
       ],
 
