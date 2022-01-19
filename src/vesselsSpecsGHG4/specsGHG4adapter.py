@@ -86,16 +86,6 @@ def adapted_specs_imo(df_unique_imo,specs):
     Output: Vessel Specs of vessels in AIS records with appropiate IMO GHG4 categories"""
     
     df_unique_imo.rename(columns={"vessel_type_main":"ais_type","length":"ais_loa","width":"ais_beam"},inplace=True)
-    ind=df_unique_imo[["imo","mmsi","ais_type","ais_loa","ais_beam"]]
-    ind=pd.merge(ind,specs,how="left",left_on="imo",right_on="LRIMOShipNo")
-    
-    ##Records with no IMO number is checked by MMSI
-    mmsi_p=ind[ind.LRIMOShipNo.isnull()][["imo","mmsi"]]
-    mmsi_p=pd.merge(mmsi_p,specs,how="left",left_on="mmsi",right_on='MaritimeMobileServiceIdentityMMSINumber')
-    
-    imo_p=ind[ind.LRIMOShipNo.notnull()]
-    
-    ind=pd.concat([imo_p,mmsi_p])
     
     ind=ind.assign(ShiptypeLevel5=np.where(ind.ShiptypeLevel5.isnull(),ind.ais_type,ind.ShiptypeLevel5))
     ##Remove values with Shiptypelevel5 null. Not much else to do with this records. 
