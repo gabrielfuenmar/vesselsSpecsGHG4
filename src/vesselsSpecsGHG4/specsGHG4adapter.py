@@ -87,6 +87,8 @@ def adapted_specs_imo(df_unique_imo):
     
     df_unique_imo.rename(columns={"vessel_type_main":"ais_type","length":"ais_loa","width":"ais_beam"},inplace=True)
     
+    ind=df_unique_imo.copy()
+    
     ind=ind.assign(ShiptypeLevel5=np.where(ind.ShiptypeLevel5.isnull(),ind.ais_type,ind.ShiptypeLevel5))
     ##Remove values with Shiptypelevel5 null. Not much else to do with this records. 
     ##Remove nans before similarity check
@@ -156,7 +158,7 @@ def adapted_specs_imo(df_unique_imo):
                                 ind.fuel)))))
                   )
     
-    ind=ind[['imo','mmsi','LRIMOShipNo', 'MaritimeMobileServiceIdentityMMSINumber', 'GrossTonnage', 'Deadweight', 'LengthOverallLOA',
+    ind=ind[['imo','mmsi', 'GrossTonnage', 'Deadweight', 'LengthOverallLOA',
      'DateOfBuild', 'TEU', 'Powerkwmax', 'MainEngineModel', 'Speed', 'Speedmax', 'Speedservice', 'BreadthExtreme', 'Draught', 'FuelType1Capacity',
      'FuelType2Capacity', 'LightDisplacementTonnage', 'MainEngineRPM', 'MainEngineType', 'Powerkwservice', 'PropulsionType',
      'ShiptypeLevel5', 'TotalBunkerCapacity', 'StandardVesselType', 'imobin', 'fuel', 'meType']]
