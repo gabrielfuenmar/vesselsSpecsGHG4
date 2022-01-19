@@ -9,17 +9,19 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='example_publish_pypi_medium',
-    version='0.6',
+    name='specs_imogh4_adapter',
+    version='0.1',
     license='MIT',
-    author="Giorgos Myrianthous",
-    author_email='email@example.com',
+    author="Gabriel Fuentes",
+    author_email='gabriel.fuentes@snf.no',
     packages=find_packages('src'),
     package_dir={'': 'src'},
-    url='https://github.com/gmyrianthous/example-publish-pypi',
-    keywords='example project',
+    url="https://github.com/gabrielfuenmar/vessels_transformation_for_GHG4",
+    keywords='GHG4 adapter',
     install_requires=[
           'scikit-learn',
+          'pyspark',
+          'pandas'
       ],
 
 )
