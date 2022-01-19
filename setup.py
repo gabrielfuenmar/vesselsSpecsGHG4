@@ -9,7 +9,7 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='specs_imogh4_adapter',
+    name='specsGHG4adapter',
     version='0.1',
     license='MIT',
     author="Gabriel Fuentes",
