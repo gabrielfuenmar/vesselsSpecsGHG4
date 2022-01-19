@@ -16,7 +16,7 @@ setup(
     author_email='gabriel.fuentes@snf.no',
     packages=find_packages('src'),
     package_dir={'': 'src'},
-    url="https://github.com/gabrielfuenmar/vessels_transformation_for_GHG4",
+    url="https://github.com/gabrielfuenmar/vesselsSpecsGHG4",
     keywords='GHG4adapter',
     install_requires=[
           'scikit-learn',
