@@ -10,7 +10,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='vesselsSpecsGHG4',
-    version='0.1',
+    version='0.4',
     license='MIT',
     author="Gabriel Fuentes",
     author_email='gabriel.fuentes@snf.no',
