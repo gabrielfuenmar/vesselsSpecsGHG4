@@ -9,15 +9,15 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='specsGHG4adapter',
-    version='0.1',
+    name='vesselsSpecsGHG4',
+    version='0.3',
     license='MIT',
     author="Gabriel Fuentes",
     author_email='gabriel.fuentes@snf.no',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     url="https://github.com/gabrielfuenmar/vessels_transformation_for_GHG4",
-    keywords='GHG4 adapter',
+    keywords='GHG4adapter',
     install_requires=[
           'scikit-learn',
           'pandas'
