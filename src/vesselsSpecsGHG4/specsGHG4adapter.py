@@ -80,8 +80,8 @@ gas_tur=['Gas Turbine(s), Electric Drive','Gas Turbine(s) Or Diesel Elec.','Gas 
 steam=['S.Turb, Gear & Oil Eng(s), Ele','St. Turb(s) Elec Dr. Or D.E.','Steam Turbine(s), Direct Drive','Steam Recip(s) With Lp Turbine','Steam Turbine(s), Elec.Drive','Steam- & Gas-Turbines, Geared','Steam Turbine(s), Geared Drive','Steam Recip(s), Direct Drive',]
 
 
-def adapted_specs_imo(df_unique_imo,specs):
-    """Input (IMPORTANT): AIS Df with unique IMO. IF no IMO then unique MMSI; DF Specs.
+def adapted_specs_imo(df_unique_imo):
+    """Input (IMPORTANT): AIS Df with unique IMO and merged with IHS Markit Specs.
     Rules adapted to IMO GHG 4 study. Important to merge with AIS sequences
     Output: Vessel Specs of vessels in AIS records with appropiate IMO GHG4 categories"""
     
