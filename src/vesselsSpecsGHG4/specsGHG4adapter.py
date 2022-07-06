@@ -133,19 +133,23 @@ def adapted_specs_imo(df_unique_imo):
                                   np.where(ind.MainEngineRPM<=300,"SSD",
                                   np.where(ind.MainEngineRPM.between(301,900),"MSD",
                                   np.where(ind.MainEngineRPM>900,"HSD","SSD"))),
-                           np.where(ind.PropulsionType.isin(['Petrol Engine(s), Direct Drive','Petrol Engine(s), Geared Drive']),"HSD",
-                           np.where(ind.fuel=="LNG",
-                                   np.where(((ind.MainEngineModel.str.contains("X"))|(ind.MainEngineModel.str.contains("DF"))),"LNG-Otto-SS",
-                                   np.where(ind.MainEngineRPM>300,"LNG-Otto-MS",    
-                                   np.where(ind.MainEngineModel.str.contains("ME"),"LNG-Diesel","LNG-Otto-MS"                                       
-                                   ))), 
-                           np.where(ind.fuel=="Methanol","Methanol",         
+                           np.where(ind.PropulsionType.isin(['Petrol Engine(s), Direct Drive','Petrol Engine(s), Geared Drive']),"HSD",       
                            np.where(ind.PropulsionType.isin(sail),"Sail",
                            np.where(ind.PropulsionType=='Battery-Electric',"Batteries",
                            np.where(ind.PropulsionType=='Non-Propelled','Non-Propelled', 
-                           "SSD"))))))))
+                           "SSD"))))))
+
+    ind=ind.assign(meType=np.where(ind.fuel=="LNG",
+                                   np.where(((ind.MainEngineModel.str.contains("X"))|(ind.MainEngineModel.str.contains("DF"))),"LNG-Otto-SS",
+                                   np.where(ind.MainEngineRPM>300,"LNG-Otto-MS",    
+                                   np.where(ind.MainEngineModel.str.contains("ME"),"LNG-Diesel","LNG-Otto-MS"                                       
+                                   ))),
+                            np.where(ind.fuel=="Methanol","Methanol", 
+                                   ind.meType)))
+ 
+            
     ##Gas turbines and Steam turbines conditional on former filters
-    ind=ind.assign(meType=np.where(((ind.PropulsionType.isin(gas_tur))|(((ind.meType.isin(["SSD","MSD"]))&(ind.fuel=="LNG")))),"Gas Turbine",
+    ind=ind.assign(meType=np.where(((ind.PropulsionType.isin(gas_tur))|(((ind.meType.isin(["SSD","MSD"]))&(ind.fuel=="Gas")))),"Gas Turbine",
                           np.where(ind.PropulsionType.isin(steam),"Steam Turbine",
                           ind.meType                      
                       ))
