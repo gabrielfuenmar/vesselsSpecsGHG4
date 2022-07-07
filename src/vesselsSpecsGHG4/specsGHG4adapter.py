@@ -165,6 +165,6 @@ def adapted_specs_imo(df_unique_imo):
     ind=ind[['imo','mmsi', 'GrossTonnage', 'Deadweight', 'LengthOverallLOA',
      'DateOfBuild', 'TEU', 'Powerkwmax', 'MainEngineModel', 'Speed', 'Speedmax', 'Speedservice', 'BreadthExtreme', 'Draught', 'FuelType1Capacity',
      'FuelType2Capacity', 'LightDisplacementTonnage', 'MainEngineRPM', 'MainEngineType', 'Powerkwservice', 'PropulsionType',
-     'ShiptypeLevel5', 'TotalBunkerCapacity', 'StandardVesselType', 'imobin', 'fuel', 'meType']]
+     'ShiptypeLevel5', 'TotalBunkerCapacity', 'StandardVesselType', 'imobin', 'fuel', 'meType','ais_beam','ais_loa']]
     
     return ind
