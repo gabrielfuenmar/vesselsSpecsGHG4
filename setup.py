@@ -17,7 +17,7 @@ setup(
     packages=find_packages('src'),
     package_dir={'': 'src'},
     url="https://github.com/gabrielfuenmar/vesselsSpecsGHG4",
-    download_url="https://github.com/gabrielfuenmar/vesselsSpecsGHG4/archive/refs/tags/v_07.tar.gz",
+    download_url="https://github.com/gabrielfuenmar/vesselsSpecsGHG4/archive/refs/tags/v_08.tar.gz",
     keywords='GHG4adapter',
     install_requires=[
           'scikit-learn',
